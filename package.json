@@ -1,0 +1,62 @@
+{
+  "name": "dz-birpc",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@8.5.0",
+  "description": "Node starter template with using ts",
+  "author": "Daniel Zhang",
+  "license": "MIT",
+  "homepage": "https://github.com/danielzhang183/dz-birpc#readme",
+  "repository": "danielzhang183/dz-birpc",
+  "bugs": "https://github.com/danielzhang183/dz-birpc/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint .",
+    "prepublishOnly": "npm run build",
+    "release": "bumpp && npm publish",
+    "start": "esno src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.27.0",
+    "@antfu/utils": "^0.5.2",
+    "@types/node": "^18.16.19",
+    "bumpp": "^8.2.1",
+    "eslint": "^8.44.0",
+    "esno": "^0.16.3",
+    "pnpm": "^8.6.6",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.9.5",
+    "unbuild": "^0.8.11",
+    "vite": "^4.4.1",
+    "vitest": "^0.33.0"
+  },
+  "eslintConfig": {
+    "extends": "@antfu"
+  }
+}
